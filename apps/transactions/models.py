@@ -7,6 +7,7 @@ from apps.common.models import CommonFieldsMixin
 
 class Transaction(CommonFieldsMixin):
     """ Transaction model"""
+    product = models.CharField(max_length=255)
     revenue_stream = models.CharField(max_length=255)
     income_stream = models.CharField(max_length=255)
     date_paid = models.CharField(max_length=255)
@@ -14,7 +15,7 @@ class Transaction(CommonFieldsMixin):
     amount = models.FloatField()
 
     def __str__(self):
-        return self.revenue_stream
+        return self.product
     
     class Meta:
         abstract = False
